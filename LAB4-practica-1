@@ -1,0 +1,37 @@
+1. CREAR ESTRUCTURA DE ARCHIVOS DE LA PRÁCTICA 1
+mkdir -p practica1/mi_sitio
+
+# Archivo 1: Sitio principal en puerto 80 (Hola Mundo)
+cat << 'EOF' > practica1/index.html
+<!DOCTYPE html>
+<html>
+<head><title>Practica 1 - Puerto 80</title></head>
+<body>
+    <h1>Hola Mundo</h1>
+</body>
+</html>
+EOF
+
+# Archivo 2: Sitio en puerto 8080 (Datos personales)
+cat << 'EOF' > practica1/mi_sitio/index.html
+<!DOCTYPE html>
+<html>
+<head><title>Practica 1 - Puerto 8080</title></head>
+<body>
+    <h1>Gregory Alberto Ramírez Quiterio</h1>
+    <h2>Matrícula: 2026-0621</h2>
+    <h3>Materia: Sistemas Operativos 3</h3>
+</body>
+</html>
+EOF
+
+# Configuración del Virtual Host de Apache (Puerto 8080)
+cat << 'EOF' > practica1/misitio8080.conf
+Listen 8080
+<VirtualHost *:8080>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/mi_sitio
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+EOF
