@@ -1,0 +1,10 @@
+2. CREAR COMANDO Y SCRIPT DE LA PRÁCTICA 2
+mkdir -p practica2
+
+# Script para el envío del correo de prueba
+cat << 'EOF' > practica2/enviar_correo.sh
+#!/bin/bash
+# Comando ejecutado para la Práctica 2:
+echo "Mi nombre es Gregory Alberto Ramírez Quiterio y mi matrícula es 2026-0621" | mail -s "MambruSeFueALaGuerra" os3conadrian@gmail.com
+EOF
+chmod +x practica2/enviar_correo.sh
