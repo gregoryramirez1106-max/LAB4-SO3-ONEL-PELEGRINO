@@ -1,0 +1,26 @@
+3. CREAR ARCHIVO DE CONFIGURACIÓN DE LA PRÁCTICA 3
+mkdir -p practica3
+
+# Extracto de la configuración cupsd.conf utilizada
+cat << 'EOF' > practica3/cupsd_fragment.conf
+# Se permitio el acceso remoto agregando Allow @LOCAL en la ubicacion principal
+<Location />
+  Order allow,deny
+  Allow @LOCAL
+</Location>
+EOF
+
+
+# ==========================================
+# 4. CREAR UN DOCUMENTO EXPLICATIVO (README.md)
+# ==========================================
+cat << 'EOF' > README.md
+# Laboratorios del Módulo IV
+
+Estudiante: Gregory Alberto Ramírez Quiterio  
+Matrícula: 2026-0621
+Práctica 3: Servidor de Impresión CUPS
+- Instalación de CUPS y `cups-pdf`.
+- Configuración de acceso en red local (`Allow @LOCAL`).
+- Compartir impresora virtual e impresión remota desde la PC cliente.
+EOF
